@@ -41,33 +41,33 @@ export default function BottomNavigation({ rol }) {
     return <>
         <nav className={`fixed  w-screen  lg:border-gray-200 transition-all z-40  ${show ? 'top-0' : 'top-[-100px]'}`}>
 
-            <div className="w-screen flex flex-wrap items-center justify-between lg:border-b-[2px] lg:border-gray-50 mx-auto py-4 px-4 lg:px-8">
+            <div className="w-screen flex items-center justify-between lg:border-b-[2px] lg:border-gray-50 mx-auto py-4 px-4 lg:px-8 ">
                 <Link href="/" className="flex items-center">
                     <img src="/logo.svg" className="h-[50px] mr-3" alt="Flowbite Logo" />
                 </Link>
-                <div className="relative w-full">
-                    <input type="search" id="location-search" className="block p-3 w-full h-full z-20 text-sm text-gray-900   rounded-[5px] focus:ring-blue-500 focus:border-blue-500" placeholder="Codigo de tracking" required />
-                    <button type="submit" className="absolute top-0 end-0 h-full p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-[5px] border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                      <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                      </svg>
-                      <span className="sr-only">Search</span>
+                <div className="relative w-[60vw] ">
+                    <input type="search" id="location-search" className="block p-3 w-full h-full z-20 border placeholder-white text-sm   bg-[#7397e69d] rounded-[5px] focus:ring-blue-500 focus:border-blue-500 text-white" placeholder="Glosario" required />
+                    <button type="submit" className="absolute top-0 end-0 h-full p-2.5 text-sm font-medium text-[#000000] bg-[#ffffffc7] rounded-r-[5px] border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                        <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                        <span className="sr-only">Search</span>
                     </button>
 
-                  </div>
+                </div>
 
 
                 {pathname !== '/Login' && pathname !== '/SignUp' && pathname !== '/Register' &&
                     <div>
-                        {
+                        {/* {
                             user ? <button className='inline relative right-5 z-50 bg-[#F7BE38] p-2 px-5 rounded-[5px] border lg:hidden' onClick={() => handleSignOut()}>Cerrar Sesión</button> :
                                 <button className='relative right-5 z-50 bg-[#F7BE38] p-2 px-5 rounded-[5px] border lg:hidden' onClick={() => router.push('/Login')}>Iniciar Sesión</button>
 
-                        }
+                        } */}
 
-                        <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" onClick={openNav} aria-controls="navbar-default" aria-expanded="false">
+                        <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-[35px] h-[35px] justify-center text-sm text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" onClick={openNav} aria-controls="navbar-default" aria-expanded="false">
                             <span className="sr-only">Open main menu</span>
-                            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 17 14">
+                            <svg className="w-12 h-12 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 17 14">
                                 <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
                             </svg>
                         </button>
@@ -75,9 +75,9 @@ export default function BottomNavigation({ rol }) {
                     </div>
 
                 }
-                <div className='relativebg-red-500 w-full flex justify-end'>
+                {/* <div className='relativebg-red-500 w-full flex justify-end'>
                     <button className='absolute top-12 mt-12 right-5 z-50 bg-[#F7BE38] p-2 px-5 rounded-[5px] border' onClick={() => router.push('/Admin')}>Administrador</button>
-                </div>
+                </div> */}
                 <div className="hidden w-screen md:block md:w-auto " id="navbar-default">
                     <ul className="list-none font-medium flex flex-col p-4 md:p-0 mt-0 rounded-lg md:flex-row md:space-x-8  ">
                         <li onClick={() => handlerNavItem('Herramientas')}>
@@ -147,6 +147,11 @@ export default function BottomNavigation({ rol }) {
                 </div>
             </div>
         </nav>
+
+
+
+
+
         <div className={`fixed top-0 w-screen lg:w-screen lg:border-r-8 overflow-auto  bg-gradient-to-tr from-[#00195c] via-[#274492] to-[#00195c] h-screen transition-all	z-50  py-[20px] ${nav ? 'left-0  ' : 'left-[-100vw] '} z-50`} >
             <div className="py-4 overflow-y-auto absolute top-[20px] right-[20px]">
                 <div className="w-[100%] text-[16px] flex justify-between items-center">
