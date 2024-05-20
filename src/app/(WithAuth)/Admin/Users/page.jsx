@@ -83,20 +83,20 @@ console.log(filter)
                 <button className='fixed text-[20px] text-gray-500 h-[50px] w-[50px] rounded-full inline-block right-[0px] top-0 bottom-0 my-auto bg-[#00000010] z-20 lg:right-[20px]' onClick={next}>{'>'}</button>
 
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg z-10 p-5 bg-white scroll-smooth w-full rounded-[10px]" ref={refFirst}>
-                    <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+                    <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white ">
 
                         <label for="table-search" class="sr-only">Search</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <svg class="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                 </svg>
                             </div>
-                            <input type="text" id="table-search-users" onChange={handlerFilter} class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar Usuario" />
+                            <input type="text" id="table-search-users" onChange={handlerFilter} class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " placeholder="Buscar Usuario" />
                         </div>
                     </div>
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
                             <tr>
 
                                 <th scope="col" class="px-6 py-3">
@@ -119,9 +119,9 @@ console.log(filter)
                         <tbody>
 
                             {temporal && temporal !== undefined && Object.values(temporal).map((i, index) => {
-                                return  i.nombre.toLowerCase().includes(filter.toLowerCase()) && <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={index}>
+                                return  i.nombre.toLowerCase().includes(filter.toLowerCase()) && <tr class="bg-white border-b  hover:bg-gray-50 " key={index}>
 
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                         <img class="w-10 h-10 rounded-full border" src={i.photo && i.photo !== undefined ? i.photo : '/usuarios.png'} alt="Jese image" />
                                         <div class="ps-3">
                                             <div class="text-base font-semibold">{i.nombre}</div>
@@ -141,7 +141,7 @@ console.log(filter)
                                     </td>
                                     <td class="px-6 py-4">
                                         {i.telefono}
-                                        <a type="button" href={`tel:${i.telefono}`} class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-10 py-2.5 text-center me-2 mb-2">Llamar</a>
+                                        <a type="button" href={`tel:${i.telefono}`} class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300  shadow-lg shadow-teal-500/50  font-medium rounded-lg text-sm px-10 py-2.5 text-center me-2 mb-2">Llamar</a>
 
                                     </td>
                                 </tr>
